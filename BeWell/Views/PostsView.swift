@@ -23,7 +23,7 @@ struct PostsView: View {
                     }
                 }
             }
-            .navigationBarTitle("PostsView", displayMode: .inline)
+            .navigationBarTitle("BeWell", displayMode: .inline)
             .navigationBarItems(trailing:
                 NavigationLink(destination: AddView()) {
                     Image(systemName: "plus")
