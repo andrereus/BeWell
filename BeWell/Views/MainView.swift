@@ -16,7 +16,7 @@ struct MainView: View {
     var body: some View {
         if isLoggedIn {
             TabView(selection: $selectedTab) {
-                PostsView()
+                PostsView(allDataOriginal: $dc.allDataOriginal)
                     .tabItem {
                         Image(systemName: "rectangle.stack.fill")
                         Text("Posts")

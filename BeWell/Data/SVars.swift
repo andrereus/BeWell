@@ -8,5 +8,6 @@
 import Foundation
 
 class SVars {
-    static var getPostsUrl: String = "http://localhost/bewellapp/get_posts.php"
+    static var postsUrl: String = "http://127.0.0.1/bewellapp/get_posts.php"
+    static var postImgUrl: String = "http://127.0.0.1/bewellapp/images/"
 }

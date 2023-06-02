@@ -15,7 +15,7 @@ class DataController: ObservableObject {
     }
     
     func loadData() {
-        let url = URL(string: SVars.getPostsUrl)!
+        let url = URL(string: SVars.postsUrl)!
         let request = URLRequest(url: url)
         let session = URLSession.shared
         
