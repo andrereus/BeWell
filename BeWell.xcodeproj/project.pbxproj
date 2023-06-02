@@ -20,6 +20,12 @@
 		3F9D28582A29F15D00EE8B03 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28572A29F15D00EE8B03 /* DataController.swift */; };
 		3F9D285A2A29F41200EE8B03 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28592A29F41200EE8B03 /* Post.swift */; };
 		3F9D285C2A29FCC600EE8B03 /* SVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D285B2A29FCC600EE8B03 /* SVars.swift */; };
+		3F9D285E2A2A19A100EE8B03 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D285D2A2A19A100EE8B03 /* ProfileView.swift */; };
+		3F9D28602A2A19B400EE8B03 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D285F2A2A19B400EE8B03 /* AddView.swift */; };
+		3F9D28622A2A19C300EE8B03 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28612A2A19C300EE8B03 /* SettingsView.swift */; };
+		3F9D28642A2A19E000EE8B03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28632A2A19E000EE8B03 /* SignInView.swift */; };
+		3F9D28662A2A19EF00EE8B03 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */; };
+		3F9D28682A2A1D9900EE8B03 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28672A2A1D9900EE8B03 /* PostsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		3F9D28572A29F15D00EE8B03 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3F9D28592A29F41200EE8B03 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F9D285B2A29FCC600EE8B03 /* SVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVars.swift; sourceTree = "<group>"; };
+		3F9D285D2A2A19A100EE8B03 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3F9D285F2A2A19B400EE8B03 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		3F9D28612A2A19C300EE8B03 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3F9D28632A2A19E000EE8B03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		3F9D28672A2A1D9900EE8B03 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,12 @@
 			isa = PBXGroup;
 			children = (
 				3F9D28522A29EC8900EE8B03 /* MainView.swift */,
+				3F9D28672A2A1D9900EE8B03 /* PostsView.swift */,
+				3F9D285F2A2A19B400EE8B03 /* AddView.swift */,
+				3F9D285D2A2A19A100EE8B03 /* ProfileView.swift */,
+				3F9D28612A2A19C300EE8B03 /* SettingsView.swift */,
+				3F9D28632A2A19E000EE8B03 /* SignInView.swift */,
+				3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */,
 				3F737DC32A28852B0058AB86 /* ContentView.swift */,
 			);
 			path = Views;
@@ -299,14 +317,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9D28682A2A1D9900EE8B03 /* PostsView.swift in Sources */,
 				3F737DCB2A28852D0058AB86 /* Persistence.swift in Sources */,
+				3F9D285E2A2A19A100EE8B03 /* ProfileView.swift in Sources */,
+				3F9D28602A2A19B400EE8B03 /* AddView.swift in Sources */,
 				3F9D28582A29F15D00EE8B03 /* DataController.swift in Sources */,
 				3F737DC42A28852B0058AB86 /* ContentView.swift in Sources */,
 				3F737DCE2A28852D0058AB86 /* BeWell.xcdatamodeld in Sources */,
+				3F9D28642A2A19E000EE8B03 /* SignInView.swift in Sources */,
 				3F9D28532A29EC8900EE8B03 /* MainView.swift in Sources */,
+				3F9D28662A2A19EF00EE8B03 /* SignUpView.swift in Sources */,
 				3F9D285C2A29FCC600EE8B03 /* SVars.swift in Sources */,
 				3F9D285A2A29F41200EE8B03 /* Post.swift in Sources */,
 				3F737DC22A28852B0058AB86 /* BeWellApp.swift in Sources */,
+				3F9D28622A2A19C300EE8B03 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
