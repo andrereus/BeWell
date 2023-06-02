@@ -26,6 +26,7 @@
 		3F9D28642A2A19E000EE8B03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28632A2A19E000EE8B03 /* SignInView.swift */; };
 		3F9D28662A2A19EF00EE8B03 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */; };
 		3F9D28682A2A1D9900EE8B03 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28672A2A1D9900EE8B03 /* PostsView.swift */; };
+		3F9D286A2A2A2A0D00EE8B03 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28692A2A2A0D00EE8B03 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		3F9D28632A2A19E000EE8B03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		3F9D28672A2A1D9900EE8B03 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		3F9D28692A2A2A0D00EE8B03 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +120,8 @@
 		3F737DC02A28852B0058AB86 /* BeWell */ = {
 			isa = PBXGroup;
 			children = (
-				3F9D28562A29F0B600EE8B03 /* Libs */,
 				3F737DC12A28852B0058AB86 /* BeWellApp.swift */,
+				3F9D28562A29F0B600EE8B03 /* Libs */,
 				3F9D28552A29EF4800EE8B03 /* Views */,
 				3F9D28542A29EF3E00EE8B03 /* Data */,
 				3F737DC52A28852D0058AB86 /* Assets.xcassets */,
@@ -183,6 +185,7 @@
 		3F9D28562A29F0B600EE8B03 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3F9D28692A2A2A0D00EE8B03 /* Extensions.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3F9D28642A2A19E000EE8B03 /* SignInView.swift in Sources */,
 				3F9D28532A29EC8900EE8B03 /* MainView.swift in Sources */,
 				3F9D28662A2A19EF00EE8B03 /* SignUpView.swift in Sources */,
+				3F9D286A2A2A2A0D00EE8B03 /* Extensions.swift in Sources */,
 				3F9D285C2A29FCC600EE8B03 /* SVars.swift in Sources */,
 				3F9D285A2A29F41200EE8B03 /* Post.swift in Sources */,
 				3F737DC22A28852B0058AB86 /* BeWellApp.swift in Sources */,
