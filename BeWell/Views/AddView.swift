@@ -12,8 +12,10 @@ struct AddView: View {
     
     var body: some View {
         VStack() {
-            TextField("Input", text: $inputText).textFieldStyle(RoundedBorderTextFieldStyle())
-        }.padding()
+            TextField("Input", text: $inputText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+        }
+        .padding()
     }
 }
 

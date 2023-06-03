@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct SignInView: View {
+    @State var inputText: String = ""
+    
     var body: some View {
-        Text("SignInView")
+        VStack() {
+            SecureField("Input", text: $inputText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+        }
+        .padding()
     }
 }
 
