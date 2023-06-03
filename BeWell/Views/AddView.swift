@@ -14,6 +14,7 @@ struct AddView: View {
         VStack() {
             TextField("Input", text: $inputText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            Spacer()
         }
         .padding()
     }

@@ -14,6 +14,7 @@ struct SignInView: View {
         VStack() {
             SecureField("Input", text: $inputText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            Spacer()
         }
         .padding()
     }
