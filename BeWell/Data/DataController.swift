@@ -21,6 +21,8 @@ class DataController: ObservableObject {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             let decoder = JSONDecoder()
+            
+            // TODO: Handle data when server is not running
             guard let posts = try? decoder.decode([Post].self, from: data!) else { return }
             
             DispatchQueue.main.async {

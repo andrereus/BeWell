@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct AddView: View {
+    @State var inputText: String = ""
+    
     var body: some View {
-        Text("AddView")
+        VStack() {
+            TextField("Input", text: $inputText).textFieldStyle(RoundedBorderTextFieldStyle())
+        }.padding()
     }
 }
 
