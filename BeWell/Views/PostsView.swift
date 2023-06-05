@@ -29,6 +29,8 @@ struct PostsView: View {
                         }
                         
                         HStack {
+                            // TODO: Like Anzahl
+                            
                             Button(action: {
                                 // TODO
                             }) {
