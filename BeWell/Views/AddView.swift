@@ -42,10 +42,8 @@ struct AddView: View {
                     TextField("Post Kategorie", text: $category)
                 }
                 
-                Button(action: {
+                Button("Veröffentlichen") {
                     // TODO
-                }) {
-                    Text("Veröffentlichen")
                 }
             }
             .navigationBarTitle("Post hinzufügen", displayMode: .inline)

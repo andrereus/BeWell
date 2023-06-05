@@ -11,28 +11,27 @@ struct SignInView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    @Binding var pageIndex: Int
+    
     var body: some View {
         VStack {
-            Text("Anmelden")
+            Text("Anmelden").font(.title)
             
             TextField("E-Mail", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
             
             SecureField("Passwort", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
-            Button(action: {
+            Button("Anmelden") {
                 // TODO
-            }) {
-                Text("Anmelden")
-            }
+            }.buttonStyle(BorderedButtonStyle())
+            
+            Button("Registrieren") {
+                pageIndex = 2
+            }.padding()
         }
         .padding()
-    }
-}
-
-struct SignInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView()
     }
 }

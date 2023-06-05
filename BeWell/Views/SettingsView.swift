@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Binding var isLoggedIn: Bool
+    
     var body: some View {
-        Text("SettingsView")
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
+        Button("Abmelden") {
+            isLoggedIn = false
+        }
     }
 }

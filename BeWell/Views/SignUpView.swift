@@ -12,31 +12,31 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var username: String = ""
     
+    @Binding var pageIndex: Int
+    
     var body: some View {
         VStack {
-            Text("Registrieren")
+            Text("Registrieren").font(.title)
             
             TextField("E-Mail", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
             
             SecureField("Passwort", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             TextField("Nutzername", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
             
-            Button(action: {
+            Button("Registrieren") {
                 // TODO
-            }) {
-                Text("Registrieren")
-            }
+            }.buttonStyle(BorderedButtonStyle())
+            
+            Button("Anmelden") {
+                pageIndex = 0
+            }.padding()
         }
         .padding()
-    }
-}
-
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView()
     }
 }

@@ -14,7 +14,10 @@ struct MainView: View {
     @State var selectedTab: Int = 0
     
     var body: some View {
-        if isLoggedIn {
+        switch dc.pageIndex {
+        case 0:
+            SignInView(pageIndex: $dc.pageIndex)
+        case 1:
             TabView(selection: $selectedTab) {
                 PostsView(allDataOriginal: $dc.allDataOriginal)
                     .tabItem {
@@ -28,15 +31,21 @@ struct MainView: View {
                         Text("Profil")
                     }.tag(1)
                 
-                SettingsView()
+                SettingsView(isLoggedIn: $isLoggedIn.onChange(updateLoggedIn))
                     .tabItem {
                         Image(systemName: "gear")
                         Text("Einstellungen")
                     }.tag(2)
             }
-        } else {
-            SignInView()
+        case 2:
+            SignUpView(pageIndex: $dc.pageIndex)
+        default:
+            SignInView(pageIndex: $dc.pageIndex)
         }
+    }
+    
+    func updateLoggedIn(value: Bool) {
+        dc.signOut()
     }
 }
 

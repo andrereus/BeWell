@@ -31,16 +31,12 @@ struct PostsView: View {
                         HStack {
                             // TODO: Like Anzahl
                             
-                            Button(action: {
+                            Button("Gefällt mir") {
                                 // TODO
-                            }) {
-                                Text("Gefällt mir")
                             }
                             
-                            Button(action: {
+                            Button("Melden") {
                                 // TODO
-                            }) {
-                                Text("Melden")
                             }
                         }
                     }
