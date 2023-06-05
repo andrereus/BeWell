@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Binding var serverOutput: [String: String]
+    
     var body: some View {
-        Text("ProfileView")
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+        VStack {
+            Text(serverOutput["username"]!)
+        }
     }
 }

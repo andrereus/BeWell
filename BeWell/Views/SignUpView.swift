@@ -14,6 +14,8 @@ struct SignUpView: View {
     
     @Binding var pageIndex: Int
     
+    @Binding var signUpFormData: [String: String]
+    
     var body: some View {
         VStack {
             Text("Registrieren").font(.title)
@@ -30,7 +32,7 @@ struct SignUpView: View {
                 .autocapitalization(.none)
             
             Button("Registrieren") {
-                // TODO
+                signUpFormData = ["email": email, "password": password, "username": username]
             }.buttonStyle(BorderedButtonStyle())
             
             Button("Anmelden") {

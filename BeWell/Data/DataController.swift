@@ -10,7 +10,7 @@ import Foundation
 class DataController: ObservableObject {
     @Published var allDataOriginal: [Post] = []
 
-    @Published var pageIndex: Int = 1
+    @Published var pageIndex: Int = 0
     @Published var serverOutput: [String: String] = [:]
     @Published var showAlert: Bool = false
 
@@ -71,6 +71,7 @@ class DataController: ObservableObject {
     }
     
     func checkServerOutputSignIn(dict: [String: String]) {
+        // TODO: Check logic
         if dict["state"] == "1" {
             serverOutput = dict
             pageIndex = 1
@@ -114,6 +115,7 @@ class DataController: ObservableObject {
     }
     
     func checkServerOutputSignUp(dict: [String: String]) {
+        // TODO: Check logic
         if dict["state"] == "1" {
             pageIndex = 1
         } else {
@@ -141,9 +143,5 @@ class DataController: ObservableObject {
         } else {
             pageIndex = 0
         }
-    }
-    
-    func getServerOutput() -> [String: String] {
-        return serverOutput
     }
 }

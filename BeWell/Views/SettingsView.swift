@@ -11,8 +11,10 @@ struct SettingsView: View {
     @Binding var isLoggedIn: Bool
     
     var body: some View {
-        Button("Abmelden") {
-            isLoggedIn = false
+        VStack {
+            Button("Abmelden") {
+                isLoggedIn = false
+            }
         }
     }
 }

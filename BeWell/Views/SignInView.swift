@@ -13,6 +13,8 @@ struct SignInView: View {
     
     @Binding var pageIndex: Int
     
+    @Binding var signInFormData: [String: String]
+    
     var body: some View {
         VStack {
             Text("Anmelden").font(.title)
@@ -25,7 +27,7 @@ struct SignInView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button("Anmelden") {
-                // TODO
+                signInFormData = ["email": email, "password": password]
             }.buttonStyle(BorderedButtonStyle())
             
             Button("Registrieren") {
