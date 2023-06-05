@@ -16,6 +16,12 @@
 		3F737DD82A28852D0058AB86 /* BeWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DD72A28852D0058AB86 /* BeWellTests.swift */; };
 		3F737DE22A28852D0058AB86 /* BeWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DE12A28852D0058AB86 /* BeWellUITests.swift */; };
 		3F737DE42A28852D0058AB86 /* BeWellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DE32A28852D0058AB86 /* BeWellUITestsLaunchTests.swift */; };
+		3F7657482A2E10F40006E4AE /* add_post.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657422A2E10F40006E4AE /* add_post.php */; };
+		3F7657492A2E10F40006E4AE /* register.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657432A2E10F40006E4AE /* register.php */; };
+		3F76574A2A2E10F40006E4AE /* upload_image.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657442A2E10F40006E4AE /* upload_image.php */; };
+		3F76574B2A2E10F40006E4AE /* get_posts.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657452A2E10F40006E4AE /* get_posts.php */; };
+		3F76574C2A2E10F40006E4AE /* signin.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657462A2E10F40006E4AE /* signin.php */; };
+		3F76574D2A2E10F40006E4AE /* signup.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F7657472A2E10F40006E4AE /* signup.php */; };
 		3F9D28532A29EC8900EE8B03 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28522A29EC8900EE8B03 /* MainView.swift */; };
 		3F9D28582A29F15D00EE8B03 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28572A29F15D00EE8B03 /* DataController.swift */; };
 		3F9D285A2A29F41200EE8B03 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D28592A29F41200EE8B03 /* Post.swift */; };
@@ -59,6 +65,12 @@
 		3F737DDD2A28852D0058AB86 /* BeWellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeWellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F737DE12A28852D0058AB86 /* BeWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeWellUITests.swift; sourceTree = "<group>"; };
 		3F737DE32A28852D0058AB86 /* BeWellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeWellUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F7657422A2E10F40006E4AE /* add_post.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = add_post.php; sourceTree = "<group>"; };
+		3F7657432A2E10F40006E4AE /* register.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = register.php; sourceTree = "<group>"; };
+		3F7657442A2E10F40006E4AE /* upload_image.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upload_image.php; sourceTree = "<group>"; };
+		3F7657452A2E10F40006E4AE /* get_posts.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_posts.php; sourceTree = "<group>"; };
+		3F7657462A2E10F40006E4AE /* signin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signin.php; sourceTree = "<group>"; };
+		3F7657472A2E10F40006E4AE /* signup.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signup.php; sourceTree = "<group>"; };
 		3F9D28522A29EC8900EE8B03 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3F9D28572A29F15D00EE8B03 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3F9D28592A29F41200EE8B03 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 				3F9D28562A29F0B600EE8B03 /* Libs */,
 				3F9D28552A29EF4800EE8B03 /* Views */,
 				3F9D28542A29EF3E00EE8B03 /* Data */,
+				3F7657412A2E10BA0006E4AE /* Server */,
 				3F737DC52A28852D0058AB86 /* Assets.xcassets */,
 				3F737DCC2A28852D0058AB86 /* BeWell.xcdatamodeld */,
 				3F737DC72A28852D0058AB86 /* Preview Content */,
@@ -154,6 +167,19 @@
 				3F737DE32A28852D0058AB86 /* BeWellUITestsLaunchTests.swift */,
 			);
 			path = BeWellUITests;
+			sourceTree = "<group>";
+		};
+		3F7657412A2E10BA0006E4AE /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				3F7657422A2E10F40006E4AE /* add_post.php */,
+				3F7657452A2E10F40006E4AE /* get_posts.php */,
+				3F7657432A2E10F40006E4AE /* register.php */,
+				3F7657462A2E10F40006E4AE /* signin.php */,
+				3F7657472A2E10F40006E4AE /* signup.php */,
+				3F7657442A2E10F40006E4AE /* upload_image.php */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 		3F9D28542A29EF3E00EE8B03 /* Data */ = {
@@ -294,8 +320,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7657482A2E10F40006E4AE /* add_post.php in Resources */,
 				3F737DC92A28852D0058AB86 /* Preview Assets.xcassets in Resources */,
+				3F76574A2A2E10F40006E4AE /* upload_image.php in Resources */,
+				3F76574C2A2E10F40006E4AE /* signin.php in Resources */,
 				3F737DC62A28852D0058AB86 /* Assets.xcassets in Resources */,
+				3F7657492A2E10F40006E4AE /* register.php in Resources */,
+				3F76574D2A2E10F40006E4AE /* signup.php in Resources */,
+				3F76574B2A2E10F40006E4AE /* get_posts.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
