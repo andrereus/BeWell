@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var username: String = ""
+    
     var body: some View {
-        Text("SignUpView")
+        VStack {
+            Text("Registrieren")
+            
+            TextField("E-Mail", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            SecureField("Passwort", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            TextField("Nutzername", text: $username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Button(action: {
+                // TODO
+            }) {
+                Text("Registrieren")
+            }
+        }
+        .padding()
     }
 }
 

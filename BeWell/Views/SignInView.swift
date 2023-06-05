@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var inputText: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
     
     var body: some View {
-        VStack() {
-            SecureField("Input", text: $inputText)
+        VStack {
+            Text("Anmelden")
+            
+            TextField("E-Mail", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Spacer()
+            
+            SecureField("Passwort", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Button(action: {
+                // TODO
+            }) {
+                Text("Anmelden")
+            }
         }
         .padding()
     }

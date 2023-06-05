@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var dc: DataController = DataController()
     
-    @State var isLoggedIn: Bool = true
+    @State var isLoggedIn: Bool = false
     @State var selectedTab: Int = 0
     
     var body: some View {
