@@ -23,7 +23,7 @@ struct MainView: View {
             SignInView(pageIndex: $dc.pageIndex, signInFormData: $signInFormData.onChange(sendSignInData))
             case 1:
                 TabView(selection: $selectedTab) {
-                    PostsView(allDataOriginal: $dc.allDataOriginal)
+                    PostsView(postsData: $dc.postsData, usersData: $dc.usersData)
                         .tabItem {
                             Image(systemName: "rectangle.stack.fill")
                             Text("Posts")

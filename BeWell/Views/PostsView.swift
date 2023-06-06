@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct PostsView: View {
-    @Binding var allDataOriginal: [Post]
+    @Binding var postsData: [Post]
+    @Binding var usersData: [User]
     
     var body: some View {
         NavigationView {
-            List(allDataOriginal) { item in
+            List(postsData) { item in
                 if (item.reported != "1") {
                     VStack(alignment: .leading) {
-                        Text(item.uid)
+                        Text(userName(uid: item.uid))
                         
                         if (item.type == "quote") {
                             Text(item.quote)
@@ -49,5 +50,9 @@ struct PostsView: View {
                 }
             )
         }
+    }
+    
+    func userName(uid: String) -> String {
+        return usersData.first(where: { $0.id == uid })?.username ?? "Unknown"
     }
 }

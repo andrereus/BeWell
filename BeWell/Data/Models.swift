@@ -18,3 +18,12 @@ struct Post: Codable, Identifiable {
     let reported: String
     let timestamp: String
 }
+
+struct User: Codable, Identifiable {
+    let id: String
+    let email: String
+    let username: String
+    let registered: String
+    let reported: String
+    let timestamp: String
+}

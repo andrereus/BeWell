@@ -8,21 +8,23 @@
 import Foundation
 
 class DataController: ObservableObject {
-    @Published var allDataOriginal: [Post] = []
+    @Published var postsData: [Post] = []
+    @Published var usersData: [User] = []
 
     @Published var pageIndex: Int = 0
     @Published var serverOutput: [String: String] = [:]
     @Published var showAlert: Bool = false
 
     init() {
-        loadData()
+        loadPostsData()
+        loadUsersData()
         loadSignInData()
     }
 
     // Load posts
     // ------------------------------------------------------------
     
-    func loadData() {
+    func loadPostsData() {
         let url = URL(string: SVars.postsUrl)!
         let request = URLRequest(url: url)
         let session = URLSession.shared
@@ -36,7 +38,31 @@ class DataController: ObservableObject {
             guard let posts = try? decoder.decode([Post].self, from: data!) else { return }
 
             DispatchQueue.main.async {
-                self.allDataOriginal = posts
+                self.postsData = posts
+            }
+        }
+
+        task.resume()
+    }
+    
+    // Load users
+    // ------------------------------------------------------------
+    
+    func loadUsersData() {
+        let url = URL(string: SVars.usersUrl)!
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+
+        let task = session.dataTask(with: request) { (data, response, error) in
+            print(String(decoding: data!, as: UTF8.self))
+            
+            let decoder = JSONDecoder()
+
+            // TODO: Handle data when server is not running
+            guard let users = try? decoder.decode([User].self, from: data!) else { return }
+
+            DispatchQueue.main.async {
+                self.usersData = users
             }
         }
 
