@@ -13,6 +13,7 @@ class DataController: ObservableObject {
 
     @Published var pageIndex: Int = 0
     @Published var serverOutput: [String: String] = [:]
+    // TODO: Implement alert
     @Published var showAlert: Bool = false
 
     init() {
@@ -97,7 +98,6 @@ class DataController: ObservableObject {
     }
     
     func checkServerOutputSignIn(dict: [String: String]) {
-        // TODO: Check logic
         if dict["state"] == "1" {
             serverOutput = dict
             pageIndex = 1
@@ -141,9 +141,10 @@ class DataController: ObservableObject {
     }
     
     func checkServerOutputSignUp(dict: [String: String]) {
-        // TODO: Check logic
         if dict["state"] == "1" {
-            pageIndex = 1
+            serverOutput = dict
+            pageIndex = 0
+            showAlert = true
         } else {
             serverOutput = dict
             showAlert = true
@@ -155,14 +156,14 @@ class DataController: ObservableObject {
 
     func signOut() {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
-        loadSignInData()
+        pageIndex = 0
     }
     
-    // Get user data
+    // Load sign in data
     // ------------------------------------------------------------
 
     func loadSignInData() {
-        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") == true {
             serverOutput = UserDefaults.standard.object(forKey: "serverOutput") as! [String: String]
             print(serverOutput)
             pageIndex = 1
