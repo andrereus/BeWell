@@ -19,6 +19,16 @@ struct Post: Codable, Identifiable {
     let timestamp: String
 }
 
+struct PostForm {
+    let type: String
+    let image: String
+    let quote: String
+    let quoteAuthor: String
+    let uid: String
+    let category: String
+    let reported: String
+}
+
 struct User: Codable, Identifiable {
     let id: String
     let email: String

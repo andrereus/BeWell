@@ -46,6 +46,34 @@ class DataController: ObservableObject {
         task.resume()
     }
     
+    // Add post
+    // ------------------------------------------------------------
+    
+    func addPost(type: String, image: String, quote: String, quoteAuthor: String, uid: String, category: String, reported: String) {
+        let urlPost = URL(string: SVars.addPostUrl)!
+        
+        var request = URLRequest(url: urlPost)
+        request.httpMethod = "POST"
+        
+        let postString = "type=\(type)&image=\(image)&quote=\(quote)&quoteAuthor=\(quoteAuthor)&uid=\(uid)&category=\(category)&reported=\(reported)"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            print(String(decoding: data!, as: UTF8.self))
+            
+            let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
+            
+            DispatchQueue.main.async {
+                self.serverOutput = dict
+                self.pageIndex = 1
+            }
+        }
+        
+        task.resume()
+    }
+    
     // Load users
     // ------------------------------------------------------------
     

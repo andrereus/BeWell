@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var dc: DataController = DataController()
     
+    @State var postForm: PostForm = PostForm(type: "", image: "", quote: "", quoteAuthor: "", uid: "", category: "", reported: "")
+    
     @State var selectedTab: Int = 0
     
     @State var signInFormData: [String: String] = ["email":"", "password":""]
@@ -23,7 +25,7 @@ struct MainView: View {
             SignInView(pageIndex: $dc.pageIndex, signInFormData: $signInFormData.onChange(sendSignInData))
             case 1:
                 TabView(selection: $selectedTab) {
-                    PostsView(postsData: $dc.postsData, usersData: $dc.usersData)
+                    PostsView(postsData: $dc.postsData, usersData: $dc.usersData, serverOutput: $dc.serverOutput, postForm: $postForm.onChange(sendPostData))
                         .tabItem {
                             Image(systemName: "rectangle.stack.fill")
                             Text("Posts")
@@ -48,8 +50,8 @@ struct MainView: View {
         }
     }
     
-    func updateLoggedIn(value: Bool) {
-        dc.signOut()
+    func sendPostData(value: PostForm) {
+        dc.addPost(type: value.type, image: value.image, quote: value.quote, quoteAuthor: value.quoteAuthor, uid: value.uid, category: value.category, reported: value.reported)
     }
     
     func sendSignInData(value: [String: String]) {
@@ -59,10 +61,8 @@ struct MainView: View {
     func sendSignUpData(value: [String: String]) {
         dc.checkSignUp(email: value["email"]!, password: value["password"]!, username: value["username"]!)
     }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
+    
+    func updateLoggedIn(value: Bool) {
+        dc.signOut()
     }
 }

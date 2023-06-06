@@ -10,6 +10,8 @@ import SwiftUI
 struct PostsView: View {
     @Binding var postsData: [Post]
     @Binding var usersData: [User]
+    @Binding var serverOutput: [String: String]
+    @Binding var postForm: PostForm
     
     var body: some View {
         NavigationView {
@@ -44,7 +46,7 @@ struct PostsView: View {
             }
             .navigationBarTitle("Posts", displayMode: .inline)
             .navigationBarItems(trailing:
-                NavigationLink(destination: AddView()) {
+                NavigationLink(destination: AddView(serverOutput: $serverOutput, postForm: $postForm)) {
                     Image(systemName: "plus")
                 }
             )

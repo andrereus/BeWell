@@ -9,11 +9,17 @@ import SwiftUI
 import PhotosUI
 
 struct AddView: View {
+    @Binding var serverOutput: [String: String]
+    @Binding var postForm: PostForm
+    
     @State var type: String = "quote"
     @State var pickerData: PhotosPickerItem?
+    @State var image: String = ""
     @State var quote: String = ""
     @State var quoteAuthor: String = ""
+    @State var uid: String = ""
     @State var category: String = ""
+    @State var reported: String = "0"
     
     var body: some View {
         VStack {
@@ -43,16 +49,15 @@ struct AddView: View {
                 }
                 
                 Button("Veröffentlichen") {
-                    // TODO
+                    // TODO: Funktion erstellen
+                    uid = serverOutput["uid"]!
+                    
+                    let temp: PostForm = PostForm(type: type, image: image, quote: quote, quoteAuthor: quoteAuthor, uid: uid, category: category, reported: reported)
+                    
+                    postForm = temp
                 }
             }
             .navigationBarTitle("Post hinzufügen", displayMode: .inline)
         }
-    }
-}
-
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddView()
     }
 }
