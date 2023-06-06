@@ -16,11 +16,11 @@ struct PostsView: View {
             List(postsData) { item in
                 if (item.reported != "1") {
                     VStack(alignment: .leading) {
-                        Text(userName(uid: item.uid))
-                        
+                        Text(userName(uid: item.uid)).font(.caption).padding(.vertical, 2.0)
+                    
                         if (item.type == "quote") {
                             Text(item.quote)
-                            Text(item.quoteAuthor)
+                            Text(item.quoteAuthor).font(.caption).padding(.vertical, 1.0)
                         } else if (item.type == "image") {
                             AsyncImage(url: URL(string: SVars.postImgUrl.appending(item.image))) { image in
                                 image.resizable().scaledToFit()
@@ -31,15 +31,14 @@ struct PostsView: View {
                         
                         HStack {
                             // TODO: Like Anzahl
-                            
                             Button("Gefällt mir") {
                                 // TODO
-                            }
-                            
+                            }.font(.caption)
+                            Spacer()
                             Button("Melden") {
                                 // TODO
-                            }
-                        }
+                            }.font(.caption)
+                        }.padding(.vertical, 2.0)
                     }
                 }
             }
