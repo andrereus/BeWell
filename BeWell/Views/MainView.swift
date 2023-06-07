@@ -25,7 +25,7 @@ struct MainView: View {
             SignInView(pageIndex: $dc.pageIndex, signInFormData: $signInFormData.onChange(sendSignInData))
             case 1:
                 TabView(selection: $selectedTab) {
-                    PostsView(postsData: $dc.postsData, usersData: $dc.usersData, serverOutput: $dc.serverOutput, postForm: $postForm.onChange(sendPostData))
+                    PostsView(postsData: $dc.postsData, usersData: $dc.usersData, categoriesData: $dc.categoriesData, serverOutput: $dc.serverOutput, postForm: $postForm.onChange(sendPostData))
                         .tabItem {
                             Image(systemName: "rectangle.stack.fill")
                             Text("Posts")

@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct AddView: View {
+    @Binding var categoriesData: [Category]
     @Binding var serverOutput: [String: String]
     @Binding var postForm: PostForm
     
@@ -18,7 +19,7 @@ struct AddView: View {
     @State var quote: String = ""
     @State var quoteAuthor: String = ""
     @State var uid: String = ""
-    @State var category: String = ""
+    @State var category: String = "1"
     @State var reported: String = "0"
     
     var body: some View {
@@ -45,7 +46,11 @@ struct AddView: View {
                 }
                 
                 Section(header: Text("Kategorie")) {
-                    TextField("Post Kategorie", text: $category)
+                    Picker(selection: $category, label: Text("Kategorie")) {
+                        ForEach(categoriesData) {
+                            Text($0.name).tag($0.id)
+                        }
+                    }
                 }
                 
                 Button("Veröffentlichen") {

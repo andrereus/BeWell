@@ -21,6 +21,8 @@ class DataController: ObservableObject {
     init() {
         loadPostsData()
         loadUsersData()
+        loadCategoriesData()
+        loadLikesData()
         loadSignInData()
     }
 
@@ -68,7 +70,7 @@ class DataController: ObservableObject {
             let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
             
             DispatchQueue.main.async {
-                self.serverOutput = dict
+                self.loadPostsData()
                 self.pageIndex = 1
             }
         }
