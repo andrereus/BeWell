@@ -53,12 +53,13 @@ class DataController: ObservableObject {
     // Add post
     // ------------------------------------------------------------
     
-    func addPost(type: String, image: String, quote: String, quoteAuthor: String, uid: String, category: String, reported: String) {
+    func addPost(type: String, image: Data, quote: String, quoteAuthor: String, uid: String, category: String, reported: String) {
         let urlPost = URL(string: SVars.addPostUrl)!
         
         var request = URLRequest(url: urlPost)
         request.httpMethod = "POST"
         
+        // TODO
         let postString = "type=\(type)&image=\(image)&quote=\(quote)&quoteAuthor=\(quoteAuthor)&uid=\(uid)&category=\(category)&reported=\(reported)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
@@ -78,6 +79,48 @@ class DataController: ObservableObject {
         task.resume()
     }
     
+    // Upload image
+    // ------------------------------------------------------------
+    
+    func uploadImage(postForm: PostForm) {
+        let url = URL(string: SVars.uploadImageUrl)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let boundary = generateBoundaryString()
+
+        let fname = "\(postForm.id).png"
+        let contentType = "multipart/form-data; boundary=\(boundary)"
+        let mimetype = "image/png"
+
+        var body = Data()
+        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+        body.append(
+            "Content-Disposition:form-data; name=\"fileToUpload\"; filename=\"\(fname)\"\r\n".data(
+                using: String.Encoding.utf8)!)
+        body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append(postForm.image)
+        body.append("\r\n--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        request.setValue("\(body.count)", forHTTPHeaderField: "Content-Length")
+        request.httpBody = body
+
+        let uploadTask = URLSession.shared.dataTask(
+            with: request as URLRequest,
+            completionHandler: { (data, response, error) in
+                let dat = String(data: data!, encoding: .utf8)
+                print(dat)
+            })
+
+        uploadTask.resume()
+    }
+    
+    func generateBoundaryString() -> String {
+        return "Boundary-\(UUID().uuidString)"
+    }
+
     // Load users
     // ------------------------------------------------------------
     

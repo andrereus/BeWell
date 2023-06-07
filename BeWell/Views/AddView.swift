@@ -14,13 +14,15 @@ struct AddView: View {
     @Binding var postForm: PostForm
     
     @State var type: String = "quote"
-    @State var pickerData: PhotosPickerItem?
-    @State var image: String = ""
     @State var quote: String = ""
     @State var quoteAuthor: String = ""
     @State var uid: String = ""
     @State var category: String = "1"
     @State var reported: String = "0"
+    
+    @State var image: Data = Data()
+    @State private var pickerData: PhotosPickerItem?
+    @State private var selectedImage: Image?
     
     var body: some View {
         VStack {

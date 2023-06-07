@@ -19,9 +19,10 @@ struct Post: Codable, Identifiable {
     let timestamp: String
 }
 
-struct PostForm {
+struct PostForm: Codable, Identifiable {
+    var id: UUID = UUID()
     let type: String
-    let image: String
+    let image: Data
     let quote: String
     let quoteAuthor: String
     let uid: String

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var dc: DataController = DataController()
     
-    @State var postForm: PostForm = PostForm(type: "", image: "", quote: "", quoteAuthor: "", uid: "", category: "", reported: "")
+    @State var postForm: PostForm = PostForm(type: "", image: Data(), quote: "", quoteAuthor: "", uid: "", category: "", reported: "")
     
     @State var selectedTab: Int = 0
     

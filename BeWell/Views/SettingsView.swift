@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    // TODO: Code überarbeiten
+    // TODO: Code überarbeiten & Einstellung speichern
     
     @Binding var isLoggedIn: Bool
     @Binding var postsData: [Post]
