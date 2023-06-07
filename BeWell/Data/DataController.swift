@@ -10,6 +10,8 @@ import Foundation
 class DataController: ObservableObject {
     @Published var postsData: [Post] = []
     @Published var usersData: [User] = []
+    @Published var categoriesData: [Category] = []
+    @Published var likesData: [Like] = []
 
     @Published var pageIndex: Int = 0
     @Published var serverOutput: [String: String] = [:]
@@ -92,6 +94,54 @@ class DataController: ObservableObject {
 
             DispatchQueue.main.async {
                 self.usersData = users
+            }
+        }
+
+        task.resume()
+    }
+    
+    // Load categories
+    // ------------------------------------------------------------
+    
+    func loadCategoriesData() {
+        let url = URL(string: SVars.categoriesUrl)!
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+
+        let task = session.dataTask(with: request) { (data, response, error) in
+            print(String(decoding: data!, as: UTF8.self))
+            
+            let decoder = JSONDecoder()
+
+            // TODO: Handle data when server is not running
+            guard let categories = try? decoder.decode([Category].self, from: data!) else { return }
+
+            DispatchQueue.main.async {
+                self.categoriesData = categories
+            }
+        }
+
+        task.resume()
+    }
+    
+    // Load likes
+    // ------------------------------------------------------------
+    
+    func loadLikesData() {
+        let url = URL(string: SVars.likesUrl)!
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+
+        let task = session.dataTask(with: request) { (data, response, error) in
+            print(String(decoding: data!, as: UTF8.self))
+            
+            let decoder = JSONDecoder()
+
+            // TODO: Handle data when server is not running
+            guard let likes = try? decoder.decode([Like].self, from: data!) else { return }
+
+            DispatchQueue.main.async {
+                self.likesData = likes
             }
         }
 

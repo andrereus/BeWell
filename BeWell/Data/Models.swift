@@ -37,3 +37,16 @@ struct User: Codable, Identifiable {
     let reported: String
     let timestamp: String
 }
+
+struct Category: Codable, Identifiable {
+    let id: String
+    let name: String
+    let timestamp: String
+}
+
+struct Like: Codable, Identifiable {
+    var id: UUID = UUID()
+    let uid: String
+    let postId: String
+    let timestamp: String
+}

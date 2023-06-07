@@ -31,13 +31,13 @@ struct MainView: View {
                             Text("Posts")
                         }.tag(0)
                     
-                    ProfileView(serverOutput: $dc.serverOutput)
+                    ProfileView(serverOutput: $dc.serverOutput, postsData: $dc.postsData)
                         .tabItem {
                             Image(systemName: "person")
                             Text("Profil")
                         }.tag(1)
                     
-                    SettingsView(isLoggedIn: $isLoggedIn.onChange(updateLoggedIn))
+                    SettingsView(isLoggedIn: $isLoggedIn.onChange(updateLoggedIn), postsData: $dc.postsData)
                         .tabItem {
                             Image(systemName: "gear")
                             Text("Einstellungen")

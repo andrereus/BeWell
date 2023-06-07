@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @Binding var serverOutput: [String: String]
+    @Binding var postsData: [Post]
     
     var body: some View {
         VStack {
