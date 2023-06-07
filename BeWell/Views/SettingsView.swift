@@ -15,36 +15,44 @@ struct SettingsView: View {
     @State var notificationsEnabled = false
 
     var body: some View {
-        VStack {
-            Toggle("Enable Quote Notifications", isOn: $notificationsEnabled)
-                .onChange(of: notificationsEnabled) { newValue in
-                    if newValue {
-                        let center = UNUserNotificationCenter.current()
-                        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                            if granted {
-                                DispatchQueue.main.async {
-                                    scheduleRandomQuoteNotification()
-                                }
-                            } else {
-                                print("Permission denied")
-                                DispatchQueue.main.async {
-                                    notificationsEnabled = false
+        NavigationView {
+            VStack {
+                Toggle("Benachrichtigungen", isOn: $notificationsEnabled)
+                    .onChange(of: notificationsEnabled) { newValue in
+                        if newValue {
+                            let center = UNUserNotificationCenter.current()
+                            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                                if granted {
+                                    DispatchQueue.main.async {
+                                        scheduleRandomQuoteNotification()
+                                    }
+                                } else {
+                                    print("Permission denied")
+                                    DispatchQueue.main.async {
+                                        notificationsEnabled = false
+                                    }
                                 }
                             }
+                        } else {
+                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                         }
-                    } else {
-                        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     }
+                
+                Button("Abmelden") {
+                    isLoggedIn = false
                 }
-
-            Button("Abmelden") {
-                isLoggedIn = false
+                .buttonStyle(BorderedButtonStyle())
+                .padding()
+                
+                Spacer()
             }
+            .padding()
+            .navigationBarTitle("Einstellungen", displayMode: .inline)
         }
     }
 
     func scheduleRandomQuoteNotification() {
-        guard let randomPost = postsData.filter({ $0.type == "quote" }).randomElement() else { return }
+        guard let randomPost = postsData.filter({ $0.type == "quote" && $0.reported != "1" }).randomElement() else { return }
         scheduleNotification(quote: randomPost.quote, author: randomPost.quoteAuthor)
     }
 

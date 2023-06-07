@@ -18,7 +18,7 @@ struct PostsView: View {
             List(postsData) { item in
                 if (item.reported != "1") {
                     VStack(alignment: .leading) {
-                        Text(userName(uid: item.uid)).font(.caption).padding(.vertical, 2.0)
+                        Text(userName(uid: item.uid)).font(.subheadline).padding(.vertical, 2.0)
                     
                         if (item.type == "quote") {
                             Text(item.quote)
@@ -30,17 +30,6 @@ struct PostsView: View {
                                 ProgressView()
                             }
                         }
-                        
-                        HStack {
-                            // TODO: Like Anzahl
-                            Button("Gefällt mir") {
-                                // TODO
-                            }.font(.caption)
-                            Spacer()
-                            Button("Melden") {
-                                // TODO
-                            }.font(.caption)
-                        }.padding(.vertical, 2.0)
                     }
                 }
             }

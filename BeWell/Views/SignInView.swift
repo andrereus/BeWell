@@ -28,11 +28,13 @@ struct SignInView: View {
             
             Button("Anmelden") {
                 signInFormData = ["email": email, "password": password]
-            }.buttonStyle(BorderedButtonStyle())
+            }
+            .buttonStyle(BorderedButtonStyle())
             
             Button("Registrieren") {
                 pageIndex = 2
-            }.padding()
+            }
+            .padding()
         }
         .padding()
     }
