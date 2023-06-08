@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var isLoggedIn: Bool
     @Binding var postsData: [Post]
+    
     @AppStorage("notificationsEnabled") var notificationsEnabled = false
 
     var body: some View {
@@ -26,7 +27,7 @@ struct SettingsView: View {
                                         scheduleRandomQuoteNotification()
                                     }
                                 } else {
-                                    print("Permission denied")
+                                    print("Berechtigung abgelehnt")
                                     DispatchQueue.main.async {
                                         notificationsEnabled = false
                                     }
@@ -36,6 +37,7 @@ struct SettingsView: View {
                             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                         }
                     }
+                    .padding()
                 
                 Button("Abmelden") {
                     isLoggedIn = false
@@ -62,7 +64,6 @@ struct SettingsView: View {
         content.title = "BeWell"
         content.body = "\(quote) - \(author)"
         content.categoryIdentifier = "quote"
-        content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default
 
         // Für Testing jede Minute eine Benachrichtigung
@@ -74,7 +75,7 @@ struct SettingsView: View {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                print("Notification scheduled successfully.")
+                print("Benachrichtigung hinzugefügt")
             }
         }
     }
