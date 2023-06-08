@@ -50,8 +50,8 @@ struct MainView: View {
         }
     }
     
-    func sendPostData(value: PostForm) {
-        dc.addPost(type: value.type, image: value.image, quote: value.quote, quoteAuthor: value.quoteAuthor, uid: value.uid, category: value.category, reported: value.reported)
+    func sendPostData(postForm: PostForm) {
+        dc.addPost(postForm: postForm)
     }
     
     func sendSignInData(value: [String: String]) {

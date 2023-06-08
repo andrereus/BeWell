@@ -44,6 +44,23 @@ struct AddView: View {
                     Section(header: Text("Bild")) {
                         // TODO
                         PhotosPicker("Bild wählen", selection: $pickerData, matching: .images)
+                        
+                        if let selectedImage {
+                            selectedImage.resizable().scaledToFit()
+                        }
+                    }.onChange(of: pickerData) { _ in
+                        Task {
+                            if let data = try? await pickerData?.loadTransferable(type: Data.self) {
+                                if let uiImage = UIImage(data: data) {
+                                    selectedImage = Image(uiImage: uiImage)
+                                    image = uiImage.jpegData(compressionQuality: 0.2) ?? Data()
+                                    
+                                    return
+                                }
+                            }
+
+                            print("Error")
+                        }
                     }
                 }
                 

@@ -53,14 +53,30 @@ class DataController: ObservableObject {
     // Add post
     // ------------------------------------------------------------
     
-    func addPost(type: String, image: Data, quote: String, quoteAuthor: String, uid: String, category: String, reported: String) {
+    func addPost(postForm: PostForm) {
+        savePost(pf: postForm)
+        
+        if (postForm.type == "image") {
+            uploadImage(pf: postForm)
+        }
+    }
+    
+    // Save post
+    // ------------------------------------------------------------
+    
+    func savePost(pf: PostForm) {
         let urlPost = URL(string: SVars.addPostUrl)!
         
         var request = URLRequest(url: urlPost)
         request.httpMethod = "POST"
         
-        // TODO
-        let postString = "type=\(type)&image=\(image)&quote=\(quote)&quoteAuthor=\(quoteAuthor)&uid=\(uid)&category=\(category)&reported=\(reported)"
+        var imageFile = ""
+        
+        if (pf.type == "image") {
+            imageFile = "\(pf.id).png"
+        }
+        
+        let postString = "type=\(pf.type)&image=\(imageFile)&quote=\(pf.quote)&quoteAuthor=\(pf.quoteAuthor)&uid=\(pf.uid)&category=\(pf.category)&reported=\(pf.reported)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
         let session = URLSession.shared
@@ -82,7 +98,7 @@ class DataController: ObservableObject {
     // Upload image
     // ------------------------------------------------------------
     
-    func uploadImage(postForm: PostForm) {
+    func uploadImage(pf: PostForm) {
         let url = URL(string: SVars.uploadImageUrl)!
         
         var request = URLRequest(url: url)
@@ -90,7 +106,7 @@ class DataController: ObservableObject {
         
         let boundary = generateBoundaryString()
 
-        let fname = "\(postForm.id).png"
+        let fname = "\(pf.id).png"
         let contentType = "multipart/form-data; boundary=\(boundary)"
         let mimetype = "image/png"
 
@@ -100,7 +116,7 @@ class DataController: ObservableObject {
             "Content-Disposition:form-data; name=\"fileToUpload\"; filename=\"\(fname)\"\r\n".data(
                 using: String.Encoding.utf8)!)
         body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
-        body.append(postForm.image)
+        body.append(pf.image)
         body.append("\r\n--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
 
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
