@@ -9,6 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct AddView: View {
+    @Environment(\.presentationMode) var presentation
+    
     @Binding var categoriesData: [Category]
     @Binding var serverOutput: [String: String]
     @Binding var postForm: PostForm
@@ -84,5 +86,7 @@ struct AddView: View {
         
         let temp: PostForm = PostForm(type: type, image: image, quote: quote, quoteAuthor: quoteAuthor, uid: uid, category: category, reported: reported)
         postForm = temp
+        
+        presentation.wrappedValue.dismiss()
     }
 }
