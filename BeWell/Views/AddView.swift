@@ -42,7 +42,6 @@ struct AddView: View {
                     }
                 } else if (type == "image") {
                     Section(header: Text("Bild")) {
-                        // TODO
                         PhotosPicker("Bild wählen", selection: $pickerData, matching: .images)
                         
                         if let selectedImage {
@@ -73,15 +72,17 @@ struct AddView: View {
                 }
                 
                 Button("Veröffentlichen") {
-                    // TODO: Funktion erstellen
-                    uid = serverOutput["uid"]!
-                    
-                    let temp: PostForm = PostForm(type: type, image: image, quote: quote, quoteAuthor: quoteAuthor, uid: uid, category: category, reported: reported)
-                    
-                    postForm = temp
+                    addPost()
                 }
             }
             .navigationBarTitle("Post hinzufügen", displayMode: .inline)
         }
+    }
+    
+    func addPost() {
+        uid = serverOutput["uid"]!
+        
+        let temp: PostForm = PostForm(type: type, image: image, quote: quote, quoteAuthor: quoteAuthor, uid: uid, category: category, reported: reported)
+        postForm = temp
     }
 }
