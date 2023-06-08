@@ -16,7 +16,7 @@ struct ProfileView: View {
             VStack {
                 Text(serverOutput["username"]!).font(.subheadline)
                 
-                List(userPosts) { item in
+                List(userPosts.sorted(by: { $0.timestamp > $1.timestamp })) { item in
                     if (item.reported != "1") {
                         VStack(alignment: .leading) {
                             if (item.type == "quote") {
