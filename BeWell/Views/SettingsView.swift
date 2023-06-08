@@ -12,7 +12,7 @@ struct SettingsView: View {
     
     @Binding var isLoggedIn: Bool
     @Binding var postsData: [Post]
-    @State var notificationsEnabled = false
+    @AppStorage("notificationsEnabled") var notificationsEnabled = false
 
     var body: some View {
         NavigationView {

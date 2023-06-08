@@ -83,8 +83,7 @@ class DataController: ObservableObject {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
-            let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
+            // let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
             
             DispatchQueue.main.async {
                 self.loadPostsData()
@@ -126,8 +125,7 @@ class DataController: ObservableObject {
         let uploadTask = URLSession.shared.dataTask(
             with: request as URLRequest,
             completionHandler: { (data, response, error) in
-                let dat = String(data: data!, encoding: .utf8)
-                print(dat)
+                print(String(decoding: data!, as: UTF8.self))
             })
 
         uploadTask.resume()
