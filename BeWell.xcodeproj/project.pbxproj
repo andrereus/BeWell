@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4625EE2A3335560074C75E /* get_posts.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625DA2A3335560074C75E /* get_posts.php */; };
+		3F4625EF2A3335560074C75E /* desert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625DC2A3335560074C75E /* desert.jpg */; };
+		3F4625F02A3335560074C75E /* 4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625DD2A3335560074C75E /* 4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png */; };
+		3F4625F12A3335560074C75E /* 93F588CF-0082-4B48-9BF5-EF87E729B235.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625DE2A3335560074C75E /* 93F588CF-0082-4B48-9BF5-EF87E729B235.png */; };
+		3F4625F22A3335560074C75E /* mountain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625DF2A3335560074C75E /* mountain.jpg */; };
+		3F4625F32A3335560074C75E /* lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E02A3335560074C75E /* lake.jpg */; };
+		3F4625F42A3335560074C75E /* 6B4FE13D-1401-4156-9CF3-69E94B42971A.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E12A3335560074C75E /* 6B4FE13D-1401-4156-9CF3-69E94B42971A.png */; };
+		3F4625F52A3335560074C75E /* register.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E22A3335560074C75E /* register.php */; };
+		3F4625F62A3335560074C75E /* 23.06.09_10.03.47_samuel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E42A3335560074C75E /* 23.06.09_10.03.47_samuel.txt */; };
+		3F4625F72A3335560074C75E /* 23.06.09_10.46.11_regina.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E52A3335560074C75E /* 23.06.09_10.46.11_regina.txt */; };
+		3F4625F82A3335560074C75E /* 23.06.09_10.23.25_susanne.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E62A3335560074C75E /* 23.06.09_10.23.25_susanne.txt */; };
+		3F4625F92A3335560074C75E /* get_users.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E72A3335560074C75E /* get_users.php */; };
+		3F4625FA2A3335560074C75E /* add_post.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E82A3335560074C75E /* add_post.php */; };
+		3F4625FB2A3335560074C75E /* get_likes.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625E92A3335560074C75E /* get_likes.php */; };
+		3F4625FC2A3335560074C75E /* signup.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625EA2A3335560074C75E /* signup.php */; };
+		3F4625FD2A3335560074C75E /* upload_image.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625EB2A3335560074C75E /* upload_image.php */; };
+		3F4625FE2A3335560074C75E /* signin.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625EC2A3335560074C75E /* signin.php */; };
+		3F4625FF2A3335560074C75E /* get_categories.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625ED2A3335560074C75E /* get_categories.php */; };
+		3F4626022A33374F0074C75E /* beWellApp.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3F4626012A33374F0074C75E /* beWellApp.sql */; };
 		3F737DC22A28852B0058AB86 /* BeWellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DC12A28852B0058AB86 /* BeWellApp.swift */; };
 		3F737DC42A28852B0058AB86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DC32A28852B0058AB86 /* ContentView.swift */; };
 		3F737DC62A28852D0058AB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F737DC52A28852D0058AB86 /* Assets.xcassets */; };
@@ -47,6 +66,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4625DA2A3335560074C75E /* get_posts.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_posts.php; sourceTree = "<group>"; };
+		3F4625DC2A3335560074C75E /* desert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = desert.jpg; sourceTree = "<group>"; };
+		3F4625DD2A3335560074C75E /* 4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png"; sourceTree = "<group>"; };
+		3F4625DE2A3335560074C75E /* 93F588CF-0082-4B48-9BF5-EF87E729B235.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "93F588CF-0082-4B48-9BF5-EF87E729B235.png"; sourceTree = "<group>"; };
+		3F4625DF2A3335560074C75E /* mountain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mountain.jpg; sourceTree = "<group>"; };
+		3F4625E02A3335560074C75E /* lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lake.jpg; sourceTree = "<group>"; };
+		3F4625E12A3335560074C75E /* 6B4FE13D-1401-4156-9CF3-69E94B42971A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6B4FE13D-1401-4156-9CF3-69E94B42971A.png"; sourceTree = "<group>"; };
+		3F4625E22A3335560074C75E /* register.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = register.php; sourceTree = "<group>"; };
+		3F4625E42A3335560074C75E /* 23.06.09_10.03.47_samuel.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 23.06.09_10.03.47_samuel.txt; sourceTree = "<group>"; };
+		3F4625E52A3335560074C75E /* 23.06.09_10.46.11_regina.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 23.06.09_10.46.11_regina.txt; sourceTree = "<group>"; };
+		3F4625E62A3335560074C75E /* 23.06.09_10.23.25_susanne.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 23.06.09_10.23.25_susanne.txt; sourceTree = "<group>"; };
+		3F4625E72A3335560074C75E /* get_users.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_users.php; sourceTree = "<group>"; };
+		3F4625E82A3335560074C75E /* add_post.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = add_post.php; sourceTree = "<group>"; };
+		3F4625E92A3335560074C75E /* get_likes.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_likes.php; sourceTree = "<group>"; };
+		3F4625EA2A3335560074C75E /* signup.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signup.php; sourceTree = "<group>"; };
+		3F4625EB2A3335560074C75E /* upload_image.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upload_image.php; sourceTree = "<group>"; };
+		3F4625EC2A3335560074C75E /* signin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signin.php; sourceTree = "<group>"; };
+		3F4625ED2A3335560074C75E /* get_categories.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_categories.php; sourceTree = "<group>"; };
+		3F4626012A33374F0074C75E /* beWellApp.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = beWellApp.sql; sourceTree = "<group>"; };
 		3F737DBE2A28852B0058AB86 /* BeWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F737DC12A28852B0058AB86 /* BeWellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeWellApp.swift; sourceTree = "<group>"; };
 		3F737DC32A28852B0058AB86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +135,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4625D82A3335080074C75E /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				3F4625D92A3335560074C75E /* bewellapp */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		3F4625D92A3335560074C75E /* bewellapp */ = {
+			isa = PBXGroup;
+			children = (
+				3F4625DA2A3335560074C75E /* get_posts.php */,
+				3F4625DB2A3335560074C75E /* images */,
+				3F4625E22A3335560074C75E /* register.php */,
+				3F4625E32A3335560074C75E /* emails */,
+				3F4625E72A3335560074C75E /* get_users.php */,
+				3F4625E82A3335560074C75E /* add_post.php */,
+				3F4625E92A3335560074C75E /* get_likes.php */,
+				3F4625EA2A3335560074C75E /* signup.php */,
+				3F4625EB2A3335560074C75E /* upload_image.php */,
+				3F4625EC2A3335560074C75E /* signin.php */,
+				3F4625ED2A3335560074C75E /* get_categories.php */,
+			);
+			path = bewellapp;
+			sourceTree = "<group>";
+		};
+		3F4625DB2A3335560074C75E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3F4625DC2A3335560074C75E /* desert.jpg */,
+				3F4625DD2A3335560074C75E /* 4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png */,
+				3F4625DE2A3335560074C75E /* 93F588CF-0082-4B48-9BF5-EF87E729B235.png */,
+				3F4625DF2A3335560074C75E /* mountain.jpg */,
+				3F4625E02A3335560074C75E /* lake.jpg */,
+				3F4625E12A3335560074C75E /* 6B4FE13D-1401-4156-9CF3-69E94B42971A.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		3F4625E32A3335560074C75E /* emails */ = {
+			isa = PBXGroup;
+			children = (
+				3F4625E42A3335560074C75E /* 23.06.09_10.03.47_samuel.txt */,
+				3F4625E52A3335560074C75E /* 23.06.09_10.46.11_regina.txt */,
+				3F4625E62A3335560074C75E /* 23.06.09_10.23.25_susanne.txt */,
+			);
+			path = emails;
+			sourceTree = "<group>";
+		};
+		3F4626002A3336CC0074C75E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3F4626012A33374F0074C75E /* beWellApp.sql */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		3F737DB52A28852B0058AB86 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +219,8 @@
 				3F9D28562A29F0B600EE8B03 /* Libs */,
 				3F9D28552A29EF4800EE8B03 /* Views */,
 				3F9D28542A29EF3E00EE8B03 /* Data */,
+				3F4625D82A3335080074C75E /* Server */,
+				3F4626002A3336CC0074C75E /* Database */,
 				3F737DC52A28852D0058AB86 /* Assets.xcassets */,
 				3F737DCC2A28852D0058AB86 /* BeWell.xcdatamodeld */,
 				3F737DC72A28852D0058AB86 /* Preview Content */,
@@ -294,8 +391,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4625FC2A3335560074C75E /* signup.php in Resources */,
+				3F4625FF2A3335560074C75E /* get_categories.php in Resources */,
+				3F4625F12A3335560074C75E /* 93F588CF-0082-4B48-9BF5-EF87E729B235.png in Resources */,
+				3F4625F52A3335560074C75E /* register.php in Resources */,
+				3F4625FE2A3335560074C75E /* signin.php in Resources */,
+				3F4625EF2A3335560074C75E /* desert.jpg in Resources */,
+				3F4625F82A3335560074C75E /* 23.06.09_10.23.25_susanne.txt in Resources */,
+				3F4625F72A3335560074C75E /* 23.06.09_10.46.11_regina.txt in Resources */,
 				3F737DC92A28852D0058AB86 /* Preview Assets.xcassets in Resources */,
+				3F4625F92A3335560074C75E /* get_users.php in Resources */,
+				3F4625F62A3335560074C75E /* 23.06.09_10.03.47_samuel.txt in Resources */,
+				3F4625F22A3335560074C75E /* mountain.jpg in Resources */,
+				3F4625FA2A3335560074C75E /* add_post.php in Resources */,
+				3F4625FB2A3335560074C75E /* get_likes.php in Resources */,
+				3F4625F32A3335560074C75E /* lake.jpg in Resources */,
+				3F4625FD2A3335560074C75E /* upload_image.php in Resources */,
 				3F737DC62A28852D0058AB86 /* Assets.xcassets in Resources */,
+				3F4625F42A3335560074C75E /* 6B4FE13D-1401-4156-9CF3-69E94B42971A.png in Resources */,
+				3F4625F02A3335560074C75E /* 4FEA7BB6-7F2D-4D28-AD82-468BB6498D3E.png in Resources */,
+				3F4626022A33374F0074C75E /* beWellApp.sql in Resources */,
+				3F4625EE2A3335560074C75E /* get_posts.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

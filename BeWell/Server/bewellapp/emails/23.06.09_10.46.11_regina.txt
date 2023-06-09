@@ -1,0 +1,3 @@
+Bitte bestätigen Sie Ihre Registrierung durch das Klicken auf den Link:
+http://127.0.0.1/bewellapp/register.php?username=regina
+Vielen Dank!
