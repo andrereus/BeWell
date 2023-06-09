@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @Binding var isLoggedIn: Bool
     @Binding var postsData: [Post]
-    
+
     @AppStorage("notificationsEnabled") var notificationsEnabled = false
 
     var body: some View {
@@ -20,7 +20,7 @@ struct SettingsView: View {
                     .onChange(of: notificationsEnabled) { newValue in
                         if newValue {
                             let center = UNUserNotificationCenter.current()
-                            
+
                             center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                                 if granted {
                                     DispatchQueue.main.async {
@@ -39,12 +39,14 @@ struct SettingsView: View {
                     }
                     .padding()
                 
+                Text("Benachrichtigungen werden gesendet, wenn die App im Hintergrund oder geschlossen ist.").font(.caption)
+
                 Button("Abmelden") {
                     isLoggedIn = false
                 }
                 .buttonStyle(BorderedButtonStyle())
                 .padding()
-                
+
                 Spacer()
             }
             .padding()
@@ -60,7 +62,7 @@ struct SettingsView: View {
     func scheduleNotification(quote: String, author: String) {
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
-        
+
         content.title = "BeWell"
         content.body = "\(quote) - \(author)"
         content.categoryIdentifier = "quote"
@@ -70,7 +72,7 @@ struct SettingsView: View {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
+
         center.add(request) { (error) in
             if let error = error {
                 print(error.localizedDescription)

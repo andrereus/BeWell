@@ -10,19 +10,19 @@ import SwiftUI
 struct ProfileView: View {
     @Binding var serverOutput: [String: String]
     @Binding var postsData: [Post]
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 Text(serverOutput["username"]!).font(.subheadline)
-                
+
                 List(userPosts.sorted(by: { $0.timestamp > $1.timestamp })) { item in
-                    if (item.reported != "1") {
+                    if item.reported != "1" {
                         VStack(alignment: .leading) {
-                            if (item.type == "quote") {
+                            if item.type == "quote" {
                                 Text(item.quote)
                                 Text(item.quoteAuthor).font(.caption).padding(.vertical, 1.0)
-                            } else if (item.type == "image") {
+                            } else if item.type == "image" {
                                 AsyncImage(url: URL(string: SVars.postImgUrl.appending(item.image))) { image in
                                     image.resizable().scaledToFit()
                                 } placeholder: {
@@ -36,7 +36,7 @@ struct ProfileView: View {
             .navigationBarTitle("Profil", displayMode: .inline)
         }
     }
-    
+
     var userPosts: [Post] {
         return postsData.filter { $0.uid == serverOutput["uid"]! }
     }

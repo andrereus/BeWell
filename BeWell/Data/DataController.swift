@@ -28,7 +28,7 @@ class DataController: ObservableObject {
 
     // Load posts
     // ------------------------------------------------------------
-    
+
     func loadPostsData() {
         let url = URL(string: SVars.postsUrl)!
         let request = URLRequest(url: url)
@@ -36,7 +36,7 @@ class DataController: ObservableObject {
 
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
+
             let decoder = JSONDecoder()
 
             // TODO: Handle data when server is not running
@@ -49,61 +49,61 @@ class DataController: ObservableObject {
 
         task.resume()
     }
-    
+
     // Add post
     // ------------------------------------------------------------
-    
+
     func addPost(postForm: PostForm) {
         savePost(pf: postForm)
-        
-        if (postForm.type == "image") {
+
+        if postForm.type == "image" {
             uploadImage(pf: postForm)
         }
     }
-    
+
     // Save post
     // ------------------------------------------------------------
-    
+
     func savePost(pf: PostForm) {
         let urlPost = URL(string: SVars.addPostUrl)!
-        
+
         var request = URLRequest(url: urlPost)
         request.httpMethod = "POST"
-        
+
         var imageFile = ""
-        
-        if (pf.type == "image") {
+
+        if pf.type == "image" {
             // Generate id instead of using user input, to make file upload more secure
             imageFile = "\(pf.id).png"
         }
-        
+
         let postString = "type=\(pf.type)&image=\(imageFile)&quote=\(pf.quote)&quoteAuthor=\(pf.quoteAuthor)&uid=\(pf.uid)&category=\(pf.category)&reported=\(pf.reported)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
-        
+
         let session = URLSession.shared
-        
+
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
             // let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
-            
+
             DispatchQueue.main.async {
                 self.loadPostsData()
                 self.pageIndex = 1
             }
         }
-        
+
         task.resume()
     }
-    
+
     // Upload image
     // ------------------------------------------------------------
-    
+
     func uploadImage(pf: PostForm) {
         let url = URL(string: SVars.uploadImageUrl)!
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
+
         let boundary = generateBoundaryString()
 
         // Generate id instead of using user input, to make file upload more secure
@@ -113,9 +113,7 @@ class DataController: ObservableObject {
 
         var body = Data()
         body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
-        body.append(
-            "Content-Disposition:form-data; name=\"fileToUpload\"; filename=\"\(fname)\"\r\n".data(
-                using: String.Encoding.utf8)!)
+        body.append("Content-Disposition:form-data; name=\"fileToUpload\"; filename=\"\(fname)\"\r\n".data(using: String.Encoding.utf8)!)
         body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
         body.append(pf.image)
         body.append("\r\n--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
@@ -132,14 +130,14 @@ class DataController: ObservableObject {
 
         uploadTask.resume()
     }
-    
+
     func generateBoundaryString() -> String {
         return "Boundary-\(UUID().uuidString)"
     }
 
     // Load users
     // ------------------------------------------------------------
-    
+
     func loadUsersData() {
         let url = URL(string: SVars.usersUrl)!
         let request = URLRequest(url: url)
@@ -147,7 +145,7 @@ class DataController: ObservableObject {
 
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
+
             let decoder = JSONDecoder()
 
             // TODO: Handle data when server is not running
@@ -160,10 +158,10 @@ class DataController: ObservableObject {
 
         task.resume()
     }
-    
+
     // Load categories
     // ------------------------------------------------------------
-    
+
     func loadCategoriesData() {
         let url = URL(string: SVars.categoriesUrl)!
         let request = URLRequest(url: url)
@@ -171,7 +169,7 @@ class DataController: ObservableObject {
 
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
+
             let decoder = JSONDecoder()
 
             // TODO: Handle data when server is not running
@@ -184,10 +182,10 @@ class DataController: ObservableObject {
 
         task.resume()
     }
-    
+
     // Load likes
     // ------------------------------------------------------------
-    
+
     func loadLikesData() {
         let url = URL(string: SVars.likesUrl)!
         let request = URLRequest(url: url)
@@ -195,7 +193,7 @@ class DataController: ObservableObject {
 
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
+
             let decoder = JSONDecoder()
 
             // TODO: Handle data when server is not running
@@ -211,61 +209,64 @@ class DataController: ObservableObject {
 
     // Sign in
     // ------------------------------------------------------------
-    
+
     func checkSignIn(email: String, password: String) {
         let urlPost = URL(string: SVars.signInUrl)!
-        
+
         var request = URLRequest(url: urlPost)
         request.httpMethod = "POST"
-        
+
         let postString = "email=\(email)&password=\(password)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
-        
+
         let session = URLSession.shared
-        
+
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
-            
+
             let dict = try! JSONSerialization.jsonObject(with: data ?? Data()) as! [String: String]
-            
+
             DispatchQueue.main.async {
                 self.checkServerOutputSignIn(dict: dict)
             }
         }
-        
+
         task.resume()
     }
-    
+
     func checkServerOutputSignIn(dict: [String: String]) {
         if dict["state"] == "1" {
             serverOutput = dict
             pageIndex = 1
             saveSignInData()
+            
+            // Make sure new registered users that login the first time get loaded
+            loadUsersData()
         } else {
             serverOutput = dict
             showAlert = true
         }
     }
-    
+
     func saveSignInData() {
         UserDefaults.standard.set(true, forKey: "isLoggedIn")
         UserDefaults.standard.set(serverOutput, forKey: "serverOutput")
     }
-    
+
     // Sign up
     // ------------------------------------------------------------
-    
+
     func checkSignUp(email: String, password: String, username: String) {
         let urlPost = URL(string: SVars.signUpUrl)!
-        
+
         var request = URLRequest(url: urlPost)
         request.httpMethod = "POST"
-        
+
         let postString = "email=\(email)&password=\(password)&username=\(username)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
 
         let session = URLSession.shared
-        
+
         let task = session.dataTask(with: request) { (data, response, error) in
             print(String(decoding: data!, as: UTF8.self))
 
@@ -278,7 +279,7 @@ class DataController: ObservableObject {
 
         task.resume()
     }
-    
+
     func checkServerOutputSignUp(dict: [String: String]) {
         if dict["state"] == "1" {
             serverOutput = dict
@@ -289,7 +290,7 @@ class DataController: ObservableObject {
             showAlert = true
         }
     }
-    
+
     // Sign out
     // ------------------------------------------------------------
 
@@ -297,7 +298,7 @@ class DataController: ObservableObject {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
         pageIndex = 0
     }
-    
+
     // Load sign in data
     // ------------------------------------------------------------
 

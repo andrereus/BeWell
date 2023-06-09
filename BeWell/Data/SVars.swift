@@ -10,14 +10,14 @@ import Foundation
 class SVars {
     static var postsUrl: String = "http://127.0.0.1/bewellapp/get_posts.php"
     static var addPostUrl: String = "http://127.0.0.1/bewellapp/add_post.php"
-    
+
     static var usersUrl: String = "http://127.0.0.1/bewellapp/get_users.php"
     static var categoriesUrl: String = "http://127.0.0.1/bewellapp/get_categories.php"
     static var likesUrl: String = "http://127.0.0.1/bewellapp/get_likes.php"
-    
+
     static var uploadImageUrl: String = "http://127.0.0.1/bewellapp/upload_image.php"
     static var postImgUrl: String = "http://127.0.0.1/bewellapp/images/"
-    
+
     static var signInUrl: String = "http://127.0.0.1/bewellapp/signin.php"
     static var signUpUrl: String = "http://127.0.0.1/bewellapp/signup.php"
 }

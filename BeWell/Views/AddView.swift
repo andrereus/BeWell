@@ -5,27 +5,27 @@
 //  Created by Student on 02.06.23.
 //
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct AddView: View {
     @Environment(\.presentationMode) var presentation
-    
+
     @Binding var categoriesData: [Category]
     @Binding var serverOutput: [String: String]
     @Binding var postForm: PostForm
-    
+
     @State var type: String = "quote"
     @State var quote: String = ""
     @State var quoteAuthor: String = ""
     @State var uid: String = ""
     @State var category: String = "1"
     @State var reported: String = "0"
-    
+
     @State var image: Data = Data()
     @State private var pickerData: PhotosPickerItem?
     @State private var selectedImage: Image?
-    
+
     var body: some View {
         VStack {
             Form {
@@ -36,16 +36,16 @@ struct AddView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                
-                if (type == "quote") {
+
+                if type == "quote" {
                     Section(header: Text("Zitat")) {
                         TextEditor(text: $quote)
                         TextField("Author", text: $quoteAuthor)
                     }
-                } else if (type == "image") {
+                } else if type == "image" {
                     Section(header: Text("Bild")) {
                         PhotosPicker("Bild wählen", selection: $pickerData, matching: .images)
-                        
+
                         if let selectedImage {
                             selectedImage.resizable().scaledToFit()
                         }
@@ -55,7 +55,7 @@ struct AddView: View {
                                 if let uiImage = UIImage(data: data) {
                                     selectedImage = Image(uiImage: uiImage)
                                     image = uiImage.jpegData(compressionQuality: 0.2) ?? Data()
-                                    
+
                                     return
                                 }
                             }
@@ -64,7 +64,7 @@ struct AddView: View {
                         }
                     }
                 }
-                
+
                 Section(header: Text("Kategorie")) {
                     Picker(selection: $category, label: Text("Kategorie")) {
                         ForEach(categoriesData) {
@@ -72,7 +72,7 @@ struct AddView: View {
                         }
                     }
                 }
-                
+
                 Button("Veröffentlichen") {
                     addPost()
                 }
@@ -80,13 +80,13 @@ struct AddView: View {
             .navigationBarTitle("Post hinzufügen", displayMode: .inline)
         }
     }
-    
+
     func addPost() {
         uid = serverOutput["uid"]!
-        
+
         let temp: PostForm = PostForm(type: type, image: image, quote: quote, quoteAuthor: quoteAuthor, uid: uid, category: category, reported: reported)
         postForm = temp
-        
+
         presentation.wrappedValue.dismiss()
     }
 }
