@@ -147,7 +147,6 @@ class DataController: ObservableObject {
 
             let decoder = JSONDecoder()
 
-            // TODO: Handle data when server is not running
             guard let users = try? decoder.decode([User].self, from: data!) else { return }
 
             DispatchQueue.main.async {
@@ -171,7 +170,6 @@ class DataController: ObservableObject {
 
             let decoder = JSONDecoder()
 
-            // TODO: Handle data when server is not running
             guard let categories = try? decoder.decode([Category].self, from: data!) else { return }
 
             DispatchQueue.main.async {
@@ -195,7 +193,6 @@ class DataController: ObservableObject {
 
             let decoder = JSONDecoder()
 
-            // TODO: Handle data when server is not running
             guard let likes = try? decoder.decode([Like].self, from: data!) else { return }
 
             DispatchQueue.main.async {
