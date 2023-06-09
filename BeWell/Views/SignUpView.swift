@@ -13,7 +13,6 @@ struct SignUpView: View {
     @State var username: String = ""
 
     @Binding var pageIndex: Int
-
     @Binding var signUpFormData: [String: String]
     
     @State private var showAlert: Bool = false

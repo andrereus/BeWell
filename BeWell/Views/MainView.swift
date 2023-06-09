@@ -9,15 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var dc: DataController = DataController()
-
     @State var postForm: PostForm = PostForm(type: "", image: Data(), quote: "", quoteAuthor: "", uid: "", category: "", reported: "")
-
-    @State var selectedTab: Int = 0
 
     @State var signInFormData: [String: String] = ["email": "", "password": ""]
     @State var signUpFormData: [String: String] = ["email": "", "password": "", "username": ""]
-
     @State var isLoggedIn: Bool = false
+    
+    @State private var selectedTab: Int = 0
 
     var body: some View {
         if let message = dc.serverOutput["message"] {

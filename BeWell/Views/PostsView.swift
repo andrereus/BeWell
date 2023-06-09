@@ -11,6 +11,7 @@ struct PostsView: View {
     @Binding var postsData: [Post]
     @Binding var usersData: [User]
     @Binding var categoriesData: [Category]
+    
     @Binding var serverOutput: [String: String]
     @Binding var postForm: PostForm
 

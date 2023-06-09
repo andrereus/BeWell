@@ -12,7 +12,6 @@ struct SignInView: View {
     @State var password: String = ""
 
     @Binding var pageIndex: Int
-
     @Binding var signInFormData: [String: String]
     
     @State private var showAlert: Bool = false
