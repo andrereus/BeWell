@@ -26,6 +26,7 @@
 		3F4625FE2A3335560074C75E /* signin.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625EC2A3335560074C75E /* signin.php */; };
 		3F4625FF2A3335560074C75E /* get_categories.php in Resources */ = {isa = PBXBuildFile; fileRef = 3F4625ED2A3335560074C75E /* get_categories.php */; };
 		3F4626022A33374F0074C75E /* beWellApp.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3F4626012A33374F0074C75E /* beWellApp.sql */; };
+		3F4626042A3339340074C75E /* beWellApp.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4626032A3339340074C75E /* beWellApp.pdf */; };
 		3F737DC22A28852B0058AB86 /* BeWellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DC12A28852B0058AB86 /* BeWellApp.swift */; };
 		3F737DC42A28852B0058AB86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F737DC32A28852B0058AB86 /* ContentView.swift */; };
 		3F737DC62A28852D0058AB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F737DC52A28852D0058AB86 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		3F4625EC2A3335560074C75E /* signin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = signin.php; sourceTree = "<group>"; };
 		3F4625ED2A3335560074C75E /* get_categories.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = get_categories.php; sourceTree = "<group>"; };
 		3F4626012A33374F0074C75E /* beWellApp.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = beWellApp.sql; sourceTree = "<group>"; };
+		3F4626032A3339340074C75E /* beWellApp.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = beWellApp.pdf; sourceTree = "<group>"; };
 		3F737DBE2A28852B0058AB86 /* BeWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F737DC12A28852B0058AB86 /* BeWellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeWellApp.swift; sourceTree = "<group>"; };
 		3F737DC32A28852B0058AB86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3F4626012A33374F0074C75E /* beWellApp.sql */,
+				3F4626032A3339340074C75E /* beWellApp.pdf */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				3F4625F62A3335560074C75E /* 23.06.09_10.03.47_samuel.txt in Resources */,
 				3F4625F22A3335560074C75E /* mountain.jpg in Resources */,
 				3F4625FA2A3335560074C75E /* add_post.php in Resources */,
+				3F4626042A3339340074C75E /* beWellApp.pdf in Resources */,
 				3F4625FB2A3335560074C75E /* get_likes.php in Resources */,
 				3F4625F32A3335560074C75E /* lake.jpg in Resources */,
 				3F4625FD2A3335560074C75E /* upload_image.php in Resources */,
