@@ -66,7 +66,7 @@ struct SettingsView: View {
         content.categoryIdentifier = "quote"
         content.sound = UNNotificationSound.default
 
-        // Für Testing jede Minute eine Benachrichtigung
+        // For testing purposes send notification every minute, change for production
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

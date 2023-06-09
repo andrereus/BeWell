@@ -73,7 +73,7 @@ class DataController: ObservableObject {
         var imageFile = ""
         
         if (pf.type == "image") {
-            // Generierte id statt Nutzereingabe, um Dateiupload sicherer zu machen
+            // Generate id instead of using user input, to make file upload more secure
             imageFile = "\(pf.id).png"
         }
         
@@ -106,7 +106,7 @@ class DataController: ObservableObject {
         
         let boundary = generateBoundaryString()
 
-        // Generierte id statt Nutzereingabe, um Dateiupload sicherer zu machen
+        // Generate id instead of using user input, to make file upload more secure
         let fname = "\(pf.id).png"
         let contentType = "multipart/form-data; boundary=\(boundary)"
         let mimetype = "image/png"
