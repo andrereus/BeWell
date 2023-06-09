@@ -15,7 +15,6 @@ class DataController: ObservableObject {
 
     @Published var pageIndex: Int = 0
     @Published var serverOutput: [String: String] = [:]
-    // TODO: Implement alert
     @Published var showAlert: Bool = false
 
     init() {

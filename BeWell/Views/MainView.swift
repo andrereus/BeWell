@@ -20,6 +20,12 @@ struct MainView: View {
     @State var isLoggedIn: Bool = false
 
     var body: some View {
+        if let message = dc.serverOutput["message"] {
+            Text("").alert(isPresented: $dc.showAlert) {
+                Alert(title: Text("Message"), message: Text(message))
+            }
+        }
+        
         switch dc.pageIndex {
         case 0:
             SignInView(pageIndex: $dc.pageIndex, signInFormData: $signInFormData.onChange(sendSignInData))

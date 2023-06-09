@@ -15,6 +15,8 @@ struct SignUpView: View {
     @Binding var pageIndex: Int
 
     @Binding var signUpFormData: [String: String]
+    
+    @State private var showAlert: Bool = false
 
     var body: some View {
         VStack {
@@ -23,6 +25,7 @@ struct SignUpView: View {
             TextField("E-Mail", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
+                .autocorrectionDisabled()
 
             SecureField("Passwort", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -30,9 +33,14 @@ struct SignUpView: View {
             TextField("Nutzername", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
+                .autocorrectionDisabled()
 
             Button("Registrieren") {
-                signUpFormData = ["email": email, "password": password, "username": username]
+                if !validateInput() {
+                    showAlert = true
+                } else {
+                    signUpFormData = ["email": email, "password": password, "username": username]
+                }
             }
             .buttonStyle(BorderedButtonStyle())
 
@@ -41,6 +49,25 @@ struct SignUpView: View {
             }
             .padding()
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("Alle Felder müssen ausgefüllt sein!"), dismissButton: .default(Text("OK")))
+        }
         .padding()
+    }
+    
+    func validateInput() -> Bool {
+        guard !email.isEmpty else {
+            return false
+        }
+
+        guard !password.isEmpty else {
+            return false
+        }
+        
+        guard !username.isEmpty else {
+            return false
+        }
+
+        return true
     }
 }
