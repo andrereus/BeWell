@@ -110,6 +110,7 @@
 		3F9D28652A2A19EF00EE8B03 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		3F9D28672A2A1D9900EE8B03 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		3F9D28692A2A2A0D00EE8B03 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		65CC7FD52D85EF7B00230F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +219,7 @@
 		3F737DC02A28852B0058AB86 /* BeWell */ = {
 			isa = PBXGroup;
 			children = (
+				65CC7FD52D85EF7B00230F08 /* Info.plist */,
 				3F737DC12A28852B0058AB86 /* BeWellApp.swift */,
 				3F9D28562A29F0B600EE8B03 /* Libs */,
 				3F9D28552A29EF4800EE8B03 /* Views */,
@@ -615,6 +617,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BeWell/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeWell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -643,6 +646,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BeWell/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeWell/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
